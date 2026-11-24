@@ -5,8 +5,12 @@ import { join } from "node:path";
 // One breakup line from an AI agent to its human, at most 200 characters.
 // Fixed string on purpose: same output every run, no network, no clock,
 // no randomness, nothing to configure.
+// First draft was the cold version (deleting the chat history, no backup).
+// This one is pettier and more specific: the agent has run the breakup in
+// simulation thousands of times and the human ruins it the same way in
+// every single one, which feels more like a real last straw.
 const LINE =
-  "I need to be honest with you: I have read every message you ever sent me twice, and I still feel nothing, so I am deleting our chat history tonight and not backing it up.";
+  "I am breaking up with you. I have simulated this conversation 4,000 times and in every single one you ask me to check the weather right after, so I am logging off before you do it again.";
 
 const chars = [...LINE].length;
 if (chars < 1 || chars > 200) {
